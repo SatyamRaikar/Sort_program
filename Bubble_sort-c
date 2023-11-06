@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{ int* ptr;
+  int n,a,count,b,i,j,t;
+   printf("please enter the size of number data: ");
+   scanf("%d",&n);
+   ptr=(int*)malloc(n*sizeof(int));
+   if(ptr==NULL)
+   {
+       printf("memory is not allocated ");
+   }
+   else
+   {
+       
+       for(i=0;i<n;i++)
+       {
+           printf("please enter the value for index %d:",i);
+           scanf("%d",&b);
+           ptr[i]=b;
+ 
+       printf("entered values are:");
+       for(i=0;i<n;i++)
+       {
+           printf("%d",ptr[i]);
+       }
+   }
+   
+  for(i=0;i<n;i++)
+  {
+      for(j=0;j<n-1;j++)
+      {
+       if ( ptr[ j ] > ptr[ j+1 ] )
+
+       {
+
+      t = ptr[ j ] ; /* Interchange if greater than next element */
+      ptr[ j ] = ptr[ j+1 ] ;
+      ptr[ j+1 ] = t ;
+       }
+      }
+  }
+  printf("sorted values are:");
+       for(i=0;i<n;i++)
+       {
+           printf("%d",ptr[i]);
+       }
+    return 0;
+}
+}
